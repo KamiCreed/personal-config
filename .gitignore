@@ -1,0 +1,15 @@
+# Ignore everything
+/*
+/*/
+
+# Except these:
+!.gitignore
+!.vimrc
+!.screenrc
+!.screen_layout
+
+# Only allow screen config
+!/.config/
+/.config/*
+!/.config/screen/
+

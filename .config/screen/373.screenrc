@@ -1,0 +1,16 @@
+source ~/.screenrc
+
+# default windows
+screen -t editor 0 bash
+screen -t headers 1 bash
+screen -t git 2 bash
+screen -t server 3 bash
+screen -t c1 4 bash
+screen -t c2 5 bash
+screen -t c3 6 bash
+select 0
+focus right
+select 1
+focus down
+select 3
+focus left
