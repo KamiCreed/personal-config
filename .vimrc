@@ -1,6 +1,10 @@
 set exrc
 set secure
 
+" Set a colour when at the limit
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
 set background=dark
 set shiftwidth=4
 set tabstop=4
@@ -26,3 +30,15 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 set cinoptions=l1
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+" Session auto-saving
+Plug 'tpope/vim-obsession'
+
+" C++ autocomplete
+Plug 'Valloric/YouCompleteMe'
+
+" Initialize plugin system
+call plug#end()
