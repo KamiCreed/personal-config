@@ -7,6 +7,7 @@
 !.vimrc
 !.screenrc
 !.screen_layout
+!.tmux.conf
 
 # Only allow screen config
 !/.config/
