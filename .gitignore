@@ -8,6 +8,7 @@
 !.screenrc
 !.screen_layout
 !.tmux.conf
+!.ycm_extra_conf.py
 
 # Only allow screen config
 !/.config/

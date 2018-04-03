@@ -31,6 +31,9 @@ set splitbelow
 set splitright
 set cinoptions=l1
 
+" Apply YCM FixIt
+map <F9> :YcmCompleter FixIt<CR>
+
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
