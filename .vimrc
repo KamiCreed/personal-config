@@ -8,7 +8,7 @@ highlight ColorColumn ctermbg=darkgray
 set background=dark
 set shiftwidth=4
 set tabstop=4
-set noexpandtab
+set expandtab
 set path=.,,**
 
 set autoread
