@@ -30,6 +30,7 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 set cinoptions=l1
+set cino+=g0 " Unindents public:, etc.
 
 " Apply YCM FixIt
 map <F9> :YcmCompleter FixIt<CR>
