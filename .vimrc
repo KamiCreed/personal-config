@@ -50,6 +50,7 @@ Plug 'tpope/vim-obsession'
 
 " C++ autocomplete
 Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 " Initialize plugin system
 call plug#end()
