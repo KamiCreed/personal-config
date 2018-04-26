@@ -1,6 +1,8 @@
 set exrc
 set secure
 
+set ff=unix
+
 " Set a colour when at the limit
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
