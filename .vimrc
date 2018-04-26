@@ -19,6 +19,8 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+nnoremap <F5> :tabdo exec 'windo e'<CR>
+
 filetype plugin indent on
 
 set makeprg=make\ -C\ ../build
