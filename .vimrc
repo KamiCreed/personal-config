@@ -52,8 +52,9 @@ call plug#begin('~/.vim/plugged')
 " Session auto-saving
 Plug 'tpope/vim-obsession'
 
-" C++ autocomplete
+" Language autocompletion (What language it autocompletes depends on how it is compiled)
 Plug 'Valloric/YouCompleteMe'
+" Generator for C++ YCM config
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 " Initialize plugin system
