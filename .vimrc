@@ -7,9 +7,13 @@ set ff=unix
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
+set noswapfile
+
 set background=dark
+set smarttab
 set shiftwidth=4
-set tabstop=4
+set tabstop=8
+set softtabstop=0
 set expandtab
 set path=.,,**
 
