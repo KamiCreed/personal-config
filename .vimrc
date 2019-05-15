@@ -43,6 +43,7 @@ set splitbelow
 set splitright
 set cinoptions=l1
 set cino+=g0 " Unindents public:, etc.
+
 " Map // in visual mode to search highlighted text
 vnoremap // y/<C-R>"<CR>
 
