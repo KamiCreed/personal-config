@@ -10,8 +10,8 @@
 !.tmux.conf
 !.ycm_extra_conf.py
 
-# Only allow screen config
+# Only allow specific configs in .config
 !/.config/
 /.config/*
 !/.config/screen/
-
+!/.config/nvim/
