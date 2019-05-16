@@ -46,6 +46,7 @@ set cino+=g0 " Unindents public:, etc.
 
 " Map // in visual mode to search highlighted text
 vnoremap // y/<C-R>"<CR>
+set spelllang=en_ca
 
 " Apply YCM FixIt
 map <F9> :YcmCompleter FixIt<CR>
