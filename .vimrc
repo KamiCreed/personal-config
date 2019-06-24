@@ -67,6 +67,7 @@ let g:indentLine_bgcolor_gui = '#FF5F00'
 
 " Prosession config
 let g:prosession_tmux_title = 1
+let g:prosession_tmux_title_format = "@@@"
 
 " Autodownload vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
