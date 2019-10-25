@@ -20,8 +20,8 @@ set path=.,,**
 
 set autoread
 
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+nnoremap <F12> :set invpaste paste?<CR>
+set pastetoggle=<F12>
 set showmode
 
 nnoremap <F5> :tabdo exec 'windo e'<CR>
@@ -47,6 +47,30 @@ set cino+=g0 " Unindents public:, etc.
 " Map // in visual mode to search highlighted text
 vnoremap // y/<C-R>"<CR>
 set spelllang=en_ca
+
+" o/O                   Start insert mode with [count] blank lines.
+"                       The default behavior repeats the insertion [count]
+"                       times, which is not so useful.
+function! s:NewLineInsertExpr( isUndoCount, command )
+    if ! v:count
+        return a:command
+    endif
+
+    let l:reverse = { 'o': 'O', 'O' : 'o' }
+    " First insert a temporary '$' marker at the next line (which is necessary
+    " to keep the indent from the current line), then insert <count> empty lines
+    " in between. Finally, go back to the previously inserted temporary '$' and
+    " enter insert mode by substituting this character.
+    " Note: <C-\><C-n> prevents a move back into insert mode when triggered via
+    " |i_CTRL-O|.
+    return (a:isUndoCount && v:count ? "\<C-\>\<C-n>" : '') .
+    \   a:command . "$\<Esc>m`" .
+    \   v:count . l:reverse[a:command] . "\<Esc>" .
+    \   'g``"_s'
+endfunction
+nnoremap <silent> <expr> o <SID>NewLineInsertExpr(1, 'o')
+nnoremap <silent> <expr> O <SID>NewLineInsertExpr(1, 'O')
+
 
 " Apply YCM FixIt
 map <F9> :YcmCompleter FixIt<CR>
@@ -110,8 +134,22 @@ augroup omnisharp_commands
     autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
 augroup END
 
+" Contextual code actions (uses fzf, CtrlP or unite.vim when available)
+nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
 " Run code actions with text selected in visual mode to extract method
 xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
+
+" Rename with dialog
+nnoremap <Leader>nm :OmniSharpRename<CR>
+nnoremap <F2> :OmniSharpRename<CR>
+" Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+
+nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
+
+" Start the omnisharp server for the current solution
+nnoremap <Leader>ss :OmniSharpStartServer<CR>
+nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
 " Autodownload vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -142,6 +180,8 @@ Plug 'Shougo/denite.nvim'
 " C# IDE stuff
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'w0rp/ale'
+
+Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
