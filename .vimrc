@@ -3,6 +3,8 @@ set secure
 
 set ff=unix
 
+set encoding=utf-8
+
 " Set a colour when at the limit
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
@@ -16,12 +18,12 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set softtabstop=4
-"set path=.,,**
+set path=.,,**
 
 set autoread
 
-nnoremap <F12> :set invpaste paste?<CR>
-set pastetoggle=<F12>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 set showmode
 
 nnoremap <F5> :tabdo exec 'windo e'<CR>
@@ -137,14 +139,6 @@ let g:prosession_tmux_title_format = "@@@"
 "" Rename with dialog
 "nnoremap <Leader>nm :OmniSharpRename<CR>
 "nnoremap <F2> :OmniSharpRename<CR>
-"" Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
-"command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
-"
-"nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
-"
-"" Start the omnisharp server for the current solution
-"nnoremap <Leader>ss :OmniSharpStartServer<CR>
-"nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
 " Autodownload vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -180,6 +174,9 @@ Plug 'tpope/vim-fugitive'
 
 " Adds vim-like navigation with tmux
 Plug 'christoomey/vim-tmux-navigator'
+
+" Vim Latex
+Plug 'lervag/vimtex'
 
 " Initialize plugin system
 call plug#end()
