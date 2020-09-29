@@ -90,6 +90,9 @@ let g:indentLine_bgcolor_gui = '#FF5F00'
 let g:prosession_tmux_title = 1
 let g:prosession_tmux_title_format = "@@@"
 
+" Vimtex config
+let g:tex_flavor = 'latex'
+
 " OmniSharp config
 
 "" Use the stdio OmniSharp-roslyn server
