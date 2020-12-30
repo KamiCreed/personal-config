@@ -14,10 +14,7 @@ set nobackup noswapfile
 
 set background=dark
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set softtabstop=4
+set sts=4 sw=4 ts=4 et
 set path=.,,**
 
 set autoread
@@ -29,6 +26,8 @@ set showmode
 nnoremap <F5> :tabdo exec 'windo e'<CR>
 
 filetype plugin indent on
+
+autocmd FileType python setlocal ts=2 shiftwidth=2 softtabstop=2 expandtab
 
 set makeprg=ninja\ -C\ ./build
 nnoremap <F4> :make!<cr>
