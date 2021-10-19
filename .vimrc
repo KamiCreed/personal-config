@@ -92,6 +92,11 @@ let g:prosession_tmux_title_format = "@@@"
 " Vimtex config
 let g:tex_flavor = 'latex'
 
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+
 " OmniSharp config
 
 "" Use the stdio OmniSharp-roslyn server
@@ -179,6 +184,12 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Vim Latex
 Plug 'lervag/vimtex'
+
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+
+Plug 'daeyun/vim-matlab', { 'do': function('DoRemote') }
 
 " Initialize plugin system
 call plug#end()
