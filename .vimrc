@@ -27,8 +27,6 @@ nnoremap <F5> :tabdo exec 'windo e'<CR>
 
 filetype plugin indent on
 
-autocmd FileType python setlocal ts=2 shiftwidth=2 softtabstop=2 expandtab
-
 set makeprg=ninja\ -C\ ./build
 nnoremap <F4> :make!<cr>
 
