@@ -15,6 +15,8 @@ set nobackup noswapfile
 set background=dark
 set smarttab
 set sts=4 sw=4 ts=4 et
+autocmd FileType tf setlocal sw=2 sts=2 ts=2 et
+autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
 set path=.,,**
 
 set autoread
