@@ -5,6 +5,9 @@ set ff=unix
 
 set encoding=utf-8
 
+" Use vi hotkeys for commandline
+set -o vi
+
 " Set a colour when at the limit
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
