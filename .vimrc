@@ -165,7 +165,10 @@ Plug 'dhruvasagar/vim-prosession'
 " Language autocompletion (What language it autocompletes depends on how it is compiled)
 Plug 'Valloric/YouCompleteMe'
 " Generator for C++ YCM config
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+
+" Language autocompletion
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Jenkinsfile syntax
 Plug 'martinda/Jenkinsfile-vim-syntax'
