@@ -81,6 +81,8 @@ autocmd FileType c,cpp,cc,hpp,h ClangFormatAutoEnable
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+let g:python3_host_prog = '/usr/bin/python3'
+
 " IndentLine config
 let g:indentLine_char = '┆'
 let g:indentLine_bgcolor_term = 255
@@ -188,6 +190,10 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Vim Latex
 Plug 'lervag/vimtex'
+
+Plug 'will133/vim-dirdiff'
+
+Plug 'vifm/vifm.vim'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
